@@ -1,0 +1,214 @@
+@custom-variant dark (&:is(.dark *));
+
+/* Import Inter font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Dark Blue Financial Theme */
+  --font-size: 16px;
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  
+  /* Dark Blue Backgrounds */
+  --bg-primary: #0B1C2E;
+  --bg-secondary: #071422;
+  --bg-card: #0F253A;
+  --bg-card-hover: #112B44;
+  --bg-input: #0D1F33;
+  
+  /* Teal-Blue Accents */
+  --accent-primary: #26C3DD;
+  --accent-secondary: #1E9FB8;
+  --accent-glow: rgba(38, 195, 221, 0.3);
+  
+  /* Neutral Colors */
+  --text-primary: #E8F1F5;
+  --text-secondary: #9BB5C7;
+  --text-muted: #6B8396;
+  --border-color: rgba(38, 195, 221, 0.2);
+  --border-subtle: rgba(155, 181, 199, 0.1);
+  
+  /* Success/Error Colors (teal tones) */
+  --success: #22C997;
+  --error: #FF5370;
+  --warning: #FFB74D;
+  
+  /* Spacing */
+  --spacing-xs: 8px;
+  --spacing-sm: 16px;
+  --spacing-md: 24px;
+  --spacing-lg: 32px;
+  --spacing-xl: 48px;
+  
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
+  --shadow-glow: 0 0 24px var(--accent-glow);
+  
+  /* Border Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  
+  --background: #0B1C2E;
+  --foreground: #E8F1F5;
+  --card: #0F253A;
+  --card-foreground: #E8F1F5;
+  --popover: #112B44;
+  --popover-foreground: #E8F1F5;
+  --primary: #26C3DD;
+  --primary-foreground: #0B1C2E;
+  --secondary: #112B44;
+  --secondary-foreground: #E8F1F5;
+  --muted: #0D1F33;
+  --muted-foreground: #9BB5C7;
+  --accent: #26C3DD;
+  --accent-foreground: #0B1C2E;
+  --destructive: #FF5370;
+  --destructive-foreground: #E8F1F5;
+  --border: rgba(38, 195, 221, 0.2);
+  --input: #0D1F33;
+  --input-background: #0D1F33;
+  --switch-background: #1E9FB8;
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --ring: rgba(38, 195, 221, 0.5);
+  --radius: 12px;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+  --radius-xl: var(--radius-xl);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    background: linear-gradient(180deg, #0B1C2E 0%, #071422 100%);
+    font-family: var(--font-family);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/**
+ * Base typography
+ */
+@layer base {
+  :where(:not(:has([class*=' text-']), :not(:has([class^='text-'])))) {
+    h1 {
+      font-size: 2rem;
+      font-weight: var(--font-weight-semibold);
+      line-height: 1.3;
+      color: var(--text-primary);
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      font-weight: var(--font-weight-semibold);
+      line-height: 1.4;
+      color: var(--text-primary);
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      font-weight: var(--font-weight-medium);
+      line-height: 1.4;
+      color: var(--text-primary);
+    }
+
+    h4 {
+      font-size: 1rem;
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+      color: var(--text-primary);
+    }
+
+    p {
+      font-size: 1rem;
+      font-weight: var(--font-weight-normal);
+      line-height: 1.6;
+      color: var(--text-secondary);
+    }
+
+    label {
+      font-size: 0.875rem;
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+      color: var(--text-primary);
+    }
+
+    button {
+      font-size: 0.9375rem;
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    input {
+      font-size: 0.9375rem;
+      font-weight: var(--font-weight-normal);
+      line-height: 1.5;
+      color: var(--text-primary);
+    }
+  }
+}
+
+html {
+  font-size: var(--font-size);
+  font-family: var(--font-family);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-primary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-secondary);
+}
+
+/* Smooth transitions */
+* {
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
